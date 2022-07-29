@@ -1,0 +1,61 @@
+<div class="flex" style="display: flex;">
+  <div class="container">
+    <div class="upper-data">
+      <img src="../assets/img/cold.png" class="upper-data-img" *ngIf="currentTemp<70">
+      <img src="../assets/img/warm.png" class="upper-data-img" *ngIf="currentTemp>70">
+      <div class="weather-data">
+        <h2 class="weather-data-location">{{city2}}</h2>
+        <p class="weather-data-temperature">{{currentTemp}}°F</p>
+      </div>
+    </div>
+    <div class="lower-data">
+      <div class="more-information">
+        <div class="more-information-title">
+          More Information
+        </div>
+        <div class="more-information-container">
+          <div class="more-information-block">
+            <div class="more-information-block-title">
+              <img src="../assets/icons/free-icon-thermometer-6474729.png" class="more-information-block-img" alt="">
+              <span class="more-information-block-span">max</span>
+            </div>
+            <div class="more-information-block-desc">
+              {{maxTemp}}°F
+            </div>
+          </div>
+          <div class="more-information-block">
+            <div class="more-information-block-title">
+              <img src="../assets/icons/free-icon-thermometer-966412.png" class="more-information-block-img" alt="">
+              <span class="more-information-block-span">min</span>
+            </div>
+            <div class="more-information-block-desc">
+              {{minTemp}}°F
+            </div>
+          </div>
+          <div class="more-information-block">
+            <div class="more-information-block-title">
+              <img src="../assets/icons/premium-icon-humidity-2828582.png" class="more-information-block-img" alt="">
+              <span class="more-information-block-span">humidity</span>
+            </div>
+            <div class="more-information-block-desc">
+              {{humidity}}%
+            </div>
+          </div>
+          <div class="more-information-block">
+            <div class="more-information-block-title">
+              <img src="../assets/icons/premium-icon-wind-1585400.png" class="more-information-block-img" alt="">
+              <span class="more-information-block-span">wind speed</span>
+            </div>
+            <div class="more-information-block-desc">
+              {{windSpeed}} km/h
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form action="" class="form">
+    <input type="text" [(ngModel)]="city1" [ngModelOptions]="{standalone: true}">
+    <button (click)="setCity()">Set city</button>
+  </form>
+</div>
